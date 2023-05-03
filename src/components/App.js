@@ -1,15 +1,15 @@
-//
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { NavBar, Home, CreatePost, PostDetail } from './index';
 
 function App() {
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/" Component={Home}/>
-        < exact path="/post/:postId" Component={PostDetail}/>
-        <Route exact path="/create-post" Component={CreatePost}/>
-      </Switch>
-      <h1>Starting Blog Using Hooks </h1>
+    <div className="container">
+      <NavBar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/post/:postId" element={<PostDetail />} />
+        <Route exact path="/create-post" element={<CreatePost />} />
+      </Routes>
     </div>
   );
 }
