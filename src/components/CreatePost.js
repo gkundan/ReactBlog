@@ -36,6 +36,8 @@ function CreatePost() {
         subtitle: subtitle.value,
         content: content.value,
         category: category.value,
+        author: author.value,
+        image: image.value,
         createdAt: new Date(),
       });
       console.log('Post successfully created with ID:', docRef.id);

@@ -31,13 +31,14 @@ function Home() {
   return (
     <div className="home">
       <h1>Tech Blog</h1>
-      <div id="blog-by">Kundan Gupta</div>
+
       {posts.map((post) => (
         <div className="post" key={post.id}>
           <Link to={`/post/${post.id}`}>
             <h3>{post.title}</h3>
           </Link>
           <p>{post.subtitle}</p>
+          <div id="blog-by">{post.author}</div>
         </div>
       ))}
     </div>

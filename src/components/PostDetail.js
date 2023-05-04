@@ -6,8 +6,6 @@ function PostDetail() {
   const [post, setPost] = useState({});
   const { postid } = useParams();
 
-  console.log('postid', postid);
-
   useEffect(() => {
     console.log('Fetching post with ID:', postid);
     firestore
@@ -25,7 +23,11 @@ function PostDetail() {
   return (
     <div className="post-detail">
       <h1>{post.title}</h1>
+      <h2>{post.subtitle}</h2>
       <p>{post.content}</p>
+      <p>Category: {post.category}</p>
+      <p>Author: {post.author}</p>
+      <p>Created at: {post.createdAt?.toDate().toString()}</p>
     </div>
   );
 }
