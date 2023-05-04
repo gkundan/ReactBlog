@@ -4,34 +4,36 @@ import { Link } from 'react-router-dom';
 import { firestore } from '../firebase';
 
 function Home() {
-  const [posts, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  // get the data from Firestore using useEffect
   useEffect(() => {
-    firestore
-      .collection('posts')
-      .get()
-      .then((snapshot) => {
-        // map through the documents and extract data
+    const fetchPosts = async () => {
+      try {
+        const postsRef = firestore.collection('posts');
+        const snapshot = await postsRef.get();
+
         const posts = snapshot.docs.map((doc) => {
           return {
-            id: doc.id, // get document ID
-            ...doc.data(), // get document data
+            id: doc.id,
+            ...doc.data(),
           };
         });
-        console.log('posts', posts);
-        setPost(posts); // update state with posts data
-      });
+
+        setPosts(posts);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   return (
     <div className="home">
       <h1>Tech Blog</h1>
       <div id="blog-by">Kundan Gupta</div>
-      {/* loop through posts and render each post */}
-      {posts.map((post, index) => (
-        <div className="post" key={`post-${index}`}>
-          {/* link to post detail page */}
+      {posts.map((post) => (
+        <div className="post" key={post.id}>
           <Link to={`/post/${post.id}`}>
             <h3>{post.title}</h3>
           </Link>

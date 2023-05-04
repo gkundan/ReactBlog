@@ -7,7 +7,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/post/:postId" element={<PostDetail />} />
+        <Route exact path="/post/:postid" element={<PostDetail />} />
         <Route exact path="/create-post" element={<CreatePost />} />
       </Routes>
     </div>
