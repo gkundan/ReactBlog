@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Mrs Sheppards
+- Font Author: Copyright (c) 2004 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name "Mrs Sheppards"
+- Font Source: http://fonts.gstatic.com/s/mrssheppards/v21/PN_2Rfm9snC0XUGoEZhb91ig3vjxynMix4Y.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

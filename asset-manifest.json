@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TheWiredWord/static/css/main.f2ec55cb.css",
+    "main.js": "/TheWiredWord/static/js/main.59807e1c.js",
+    "index.html": "/TheWiredWord/index.html",
+    "main.f2ec55cb.css.map": "/TheWiredWord/static/css/main.f2ec55cb.css.map",
+    "main.59807e1c.js.map": "/TheWiredWord/static/js/main.59807e1c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2ec55cb.css",
+    "static/js/main.59807e1c.js"
+  ]
+}
