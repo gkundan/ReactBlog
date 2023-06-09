@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import styled from 'styled-components';
 import { firestore } from '../firebase';
+
+// Create a Title component that'll render an <h1> tag with some styles
+const BlogHeading = styled.h1`
+  text-align: center;
+  color: #2196f3;
+  margin-bottom: 2px;
+`;
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -30,7 +37,7 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>Tech Blog</h1>
+      <BlogHeading style={styles.heading}>Tech Blog</BlogHeading>
 
       {posts.map((post) => (
         <div className="post" key={post.id}>
@@ -46,3 +53,13 @@ function Home() {
 }
 
 export default Home;
+
+// inline css
+
+const styles = {
+  heading: {
+    marginTop: 20,
+    fontSize: 29,
+    fontWeight: 900,
+  },
+};
